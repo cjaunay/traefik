@@ -39,8 +39,8 @@ entryPoints:
     #       priority: 42
 
   # - "--entrypoints.websecure.address=:443"  # Entrée HTTPS
-  websecure:
-    address: :443
+  # websecure:
+    # address: :443
 
 # Certificates configuration
 # ---
