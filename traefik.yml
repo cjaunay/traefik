@@ -27,7 +27,7 @@ api:
 entryPoints:
   # - "--entrypoints.web.address=:80"  # Entrée HTTP
   web:
-    address: :80
+    address: :81
     # (Optional) Redirect to HTTPS
     # ---
     # http:

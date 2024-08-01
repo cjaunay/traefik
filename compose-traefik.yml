@@ -3,7 +3,7 @@ services:
     container_name: traefik
     image: traefik:v3.1
     ports:
-      - 81:80 # Redirection du port 80 de l'hôte vers le port 80 du conteneur
+      - 81:80 # Redirection du port 81 de l'hôte vers le port 80 du conteneur
       - 443:443
       - 8080:8080 # Redirection du port 8080 de l'hôte vers le port 8080 du conteneur (pour le tableau de bord Traefik)
     volumes:
