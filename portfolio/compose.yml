@@ -1,0 +1,27 @@
+services:
+  portfolio:
+    container_name: portfolio
+    image: php:8.3-apache
+    volumes:
+      - ./dock_portfolio:/var/www/html
+    networks:
+      - traefik-public
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.portfolio.rule=Host(`portfolio.localhost`)
+      - traefik.http.routers.portfolio.entrypoints=web # Utiliser l'entrée "web" de Traefik, qui est mappée sur le port 80 en interne
+      - traefik.http.services.portfolio.loadbalancer.server.port=80 # Port interne du conteneur Apache
+      # - traefik.http.routers.portfolio.service=portfolio
+
+  # databs:
+  #   container_name: databs
+  #   image: mysql:lts
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=root
+  #     - MYSQL_DATABASE=portfolio
+  #   networks:
+  #     - traefik-public
+
+networks:
+  traefik-public:
+    external: true
