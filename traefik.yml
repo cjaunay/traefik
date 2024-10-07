@@ -36,7 +36,6 @@ entryPoints:
           to: websecure
           scheme: https
           permanent: true
-    #       priority: 42
 
   # Entrée HTTPS
   websecure:
@@ -46,23 +45,23 @@ entryPoints:
 # ---
 # TODO: Customize your Cert Resolvers and Domain settings
 #
-# certificatesResolvers:
-# # LET'S ENCRYPT
-# # ---
+certificatesResolvers:
+# LET'S ENCRYPT
+# ---
 #   staging:
 #     acme:
-#       email: your-email@example.com # TODO: Change this to your email
+#       email: clj@ckd-industrie.com
 #       storage: /ssl-certs/acme.json
 #       caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
 #       httpChallenge:
 #         entryPoint: web
-#   production:
-#     acme:
-#       email: your-email@example.com # TODO: Change this to your email
-#       storage: /ssl-certs/acme.json
-#       caServer: "https://acme-v02.api.letsencrypt.org/directory"
-#       httpChallenge:
-#         entryPoint: web
+  production:
+    acme:
+      email: clj@ckd-industrie.com
+      storage: /ssl-certs/acme.json
+      caServer: "https://acme-v02.api.letsencrypt.org/directory"
+      httpChallenge:
+        entryPoint: web
 
 # Provider configuration
 # ---
