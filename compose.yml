@@ -10,12 +10,6 @@ services:
       - ./traefik.yml:/etc/traefik/traefik.yml:ro # Traefik config file
       - /var/run/docker.sock:/var/run/docker.sock:ro # Volume pour accéder au socket Docker
       - traefik-ssl-certs:/ssl-certs # Volume pour certification ssl
-#    networks:
-#      - traefik-public
-
-#networks:
-#  traefik-public:
-#    external: true
 
 volumes:
   traefik-ssl-certs:
